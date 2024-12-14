@@ -1,0 +1,20 @@
+<%- include('header.ejs') %> 
+<% const code = error_code || 'N/A'; %>
+<% const msg = message || 'N/A'; %>
+
+  <h1>Delete a staff</h1>
+    <form action="/admin/delete" method="POST">
+      Username<input type="text" id="username" name="username" required><br>
+      Full name<input type="text" id="fullname" name="fullname" required><br>
+      <input type="submit" value="Delete">
+    </form>
+
+    <br>
+    <% if(code !== 'N/A') { %>
+      <p>Error ID: <%= code %></p> 
+   <% } %>
+
+  <% if(msg !== 'N/A') { %>
+     <p><%= msg %></p> 
+   <% } %>
+<%- include('footer.ejs') %> 

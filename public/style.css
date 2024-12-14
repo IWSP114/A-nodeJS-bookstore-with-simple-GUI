@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+.postTable{
+    line-height: 2;
+}
+
+textarea{
+    width:300px;
+    height: 70px;
+    display: block;
+}
+
+nav .logout {
+    float: right; 
+}
+.username{
+    font-weight: bold;
+    color: blue;
+}

@@ -1,0 +1,21 @@
+<%- include('header-staff.ejs') %> 
+
+  <h1>Staff Index</h1>
+  
+
+  <% if(data.length) { %>
+    <% data.forEach((element)=> {
+        %><h3>Book ID: <%=element.id%> <a href="/">DELETE</a></h3>
+        %><p>Title: <%=element.title%></p>
+        %><p>Author: <%=element.author%></p>
+        %><p>ISBN: <%=element.ISBN%></p> 
+        %><p>Publisher: <%=element.publisher%></p> 
+        %><p>Year of publish: <%=element.year_published%></p> 
+    <%}) %>
+  <% } %>
+
+  <% if(!data.length) { %>
+        <h2>No books founded</h2>
+    <% } %>
+    
+<%- include('footer.ejs') %> 

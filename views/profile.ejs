@@ -1,0 +1,17 @@
+<% if (identity === 'staff') { %>
+  <%- include('header-staff.ejs') %>
+<% } else { %>
+  <%- include('header.ejs') %>
+<% } %>
+
+    <h1>Change password</h1>
+
+    <form action="/password-change" method="POST">
+
+      Old Password<input type="password" name="password" id="password"><br>
+
+      New Password<input type="password" name="newpassword" id="newpassword"><br>
+      <input type="submit" value="Change password">
+    </form>
+    
+<%- include('footer.ejs') %> 

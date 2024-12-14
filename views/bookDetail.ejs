@@ -1,0 +1,43 @@
+<%- include('header-staff.ejs') %> 
+
+  <h1>Staff Index</h1>
+  
+
+  <% if(data.length) { %>
+    <% data.forEach((element)=> {
+        %><h3>Book ID: <%=element.id%></h3>
+        %><p>Title: <%=element.title%></p>
+        %><p>Author: <%=element.author%></p>
+        %><p>ISBN: <%=element.ISBN%></p> 
+        %><p>Publisher: <%=element.publisher%></p> 
+        %><p>Year of publish: <%=element.year_published%></p> 
+        %><p>Availability: <%=element.is_available%></p>
+
+      <form action="/staff/delete" method="POST">
+      <input type="hidden" id="id" name="id" value="<%=element.id%>">
+      <input type="submit" value="DELETE">
+      </form>
+
+      <form action="/staff/update" method="POST">
+      New Title<input type="text" id="title" name="title"><br>
+      New Author<input type="text" id="author" name="author"><br>
+      New ISBN<input type="number" id="ISBN" name="ISBN"><br>
+      New Publisher<input type="text" id="publisher" name="publisher"><br>
+      New Year of publish<input type="text" id="publishyear" name="publishyear"><br>
+      Available
+      <select name="available" id="available">
+        <option value="1">True</option>
+        <option value="0">False</option>
+      </select>
+      <input type="hidden" id="id" name="id" value="<%=element.id%>">
+      <input type="submit" value="Update">
+      </form>
+
+    <%}) %>
+  <% } %>
+
+  <% if(!data.length) { %>
+        <h2>No books founded</h2>
+    <% } %>
+    
+<%- include('footer.ejs') %> 

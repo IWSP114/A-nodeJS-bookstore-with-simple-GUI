@@ -1,0 +1,16 @@
+
+<% if (identity === 'staff') { %>
+  <%- include('header-staff.ejs') %>
+<% } else { %>
+  <%- include('header.ejs') %>
+<% } %>
+
+<h1>Search a book by title / author / publisher / published year</h1>
+<div class="search-container">
+  <form action="/search" method="GET">
+      <input type="text" placeholder="Search..." name="keyword" required>
+      <button type="submit">Submit</button>
+  </form>
+</div>
+
+<%- include('footer.ejs') %> 

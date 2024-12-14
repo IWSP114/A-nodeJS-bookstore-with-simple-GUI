@@ -1,0 +1,21 @@
+<% if (identity === 'staff') { %>
+  <%- include('header-staff.ejs') %>
+<% } else { %>
+  <%- include('header.ejs') %>
+<% } %>
+
+  <h1>Staff Index</h1>
+  
+
+  <% if(data.length) { %>
+    <% data.forEach((element)=> {
+        %><h3>Book ID: <%=element.id%> <a href = "/staff/getbook/<%=element.id%>"> Detail</a></h3>
+        %><h2>Title: <%=element.title%></h2>
+    <%}) %>
+  <% } %>
+
+  <% if(!data.length) { %>
+        <h2>No books founded</h2>
+    <% } %>
+    
+<%- include('footer.ejs') %> 

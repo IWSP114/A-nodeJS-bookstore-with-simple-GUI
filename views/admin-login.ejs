@@ -1,0 +1,17 @@
+<%- include('header.ejs') %> 
+<% const code = error_code || 'N/A'; %>
+<% const msg = message || 'No errors.'; %>
+
+  <h1>Admin Login</h1>
+    <form action="/admin/login" method="POST">
+      Username<input type="text" id="username" name="username" required><br>
+      Password<input type="password" name="password" id="password" required><br>
+      <input type="submit" value="Login">
+    </form>
+
+    <br>
+    <% if(code !== 'N/A') { %>
+       <p>Error ID: <%= code %></p> 
+       <p><%= msg %></p> 
+   <% } %>
+<%- include('footer.ejs') %> 

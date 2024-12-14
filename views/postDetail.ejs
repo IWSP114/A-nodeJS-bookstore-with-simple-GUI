@@ -1,0 +1,34 @@
+<% if (identity === 'staff') { %>
+  <%- include('header-staff.ejs') %>
+<% } else { %>
+  <%- include('header.ejs') %>
+<% } %>
+
+<h1>Search a book by title / author / publisher / published year</h1>
+<div class="search-container">
+  <form action="/search" method="GET">
+      <input type="text" placeholder="Search..." name="keyword" required>
+      <button type="submit">Submit</button>
+  </form>
+</div>
+
+<h1>Search Results</h1>
+
+<% if(data.length) { %>
+  <% data.forEach((element)=> {
+      %><h3>Book ID: <%=element.id%></h3>
+      %><p>Title: <%=element.title%></p>
+      %><p>Author: <%=element.author%></p>
+      %><p>ISBN: <%=element.ISBN%></p> 
+      %><p>Publisher: <%=element.publisher%></p> 
+      %><p>Year of publish: <%=element.year_published%></p> 
+  <%}) %>
+<% } %>
+
+<% if(!data.length) { %>
+      <h2>No books found in database</h2>
+  <% } %>
+
+
+
+<%- include('footer.ejs') %> 

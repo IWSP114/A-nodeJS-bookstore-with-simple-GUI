@@ -1,0 +1,13 @@
+<%- include('header-staff.ejs') %> 
+
+  <h1>Create a new book</h1>
+    <form action="/create" method="POST">
+      Title<input type="text" id="title" name="title"><br>
+      Author<input type="text" name="author" id="author"><br>
+      ISBN<input type="number" id="ISBN" name="ISBN"><br>
+      Publisher<input type="text" name="publisher" id="publisher"><br>
+      Publish Year<input type="text" name="publishyear" id="publishyear"><br>
+      <input type="submit" value="Create">
+    </form>
+   
+<%- include('footer.ejs') %> 
